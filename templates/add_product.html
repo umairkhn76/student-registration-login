@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1 class="h1">Add Product</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Product Name</label>
+        <input type="text" name="name" placeholder="Enter product name">
+
+        <br><br>
+
+        <label>Price</label>
+        <input type="number" name="price" placeholder="Enter price">
+
+        <br><br>
+
+        <label>Product ID</label>
+        <input type="text" name="product_id" placeholder="Enter product ID">
+
+        <br><br>
+
+        <button type="submit">Add Product</button>
+
+        <hr>
+
+        <a href="{% url 'my_products' %}">
+            View Products
+        </a>
+
+    </form>
+
+</body>
+
+</html>

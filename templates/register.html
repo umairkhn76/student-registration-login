@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form method="POST" id="register">
+        {% csrf_token %}
+        <h1 class="h1">Registeration form</h1>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Enter your name">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email">
+        <label>Phone</label>
+        <input type="tel" name="phone" placeholder="Enter your mobile">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password">
+        <button type="submit">Register</button>
+        <p>
+            Login with another account
+            <a href="{%url 'login' %}">Login</a>
+        </p>
+    </form>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
