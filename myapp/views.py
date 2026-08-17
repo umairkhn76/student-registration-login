@@ -88,4 +88,8 @@ def delete_product(request, id):
         return redirect("my_products")
 
     return redirect("my_products")
+
+def logout(request):
+    request.session.flush()
+    return redirect("login")
     
